@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Attendance Tracker for managing student records and daily attendance.">
+  <title>Student Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div>
+        <h1>Student Attendance Tracker</h1>
+        <p>Manage students and track daily attendance</p>
+      </div>
+      <div class="date-card">
+        <span>Today's Date</span>
+        <strong id="todayDate">Loading...</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid" aria-label="Attendance summary">
+      <article class="stat-card">
+        <span class="stat-label">Total Students</span>
+        <p class="stat-number" id="totalStudents">0</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Present Today</span>
+        <p class="stat-number present-text" id="presentCount">0</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Absent Today</span>
+        <p class="stat-number absent-text" id="absentCount">0</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Attendance Rate</span>
+        <p class="stat-number" id="attendanceRate">0%</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Add a Student</h2>
+          <p>Enter the student's details below.</p>
+        </div>
+      </div>
+
+      <form id="studentForm" class="student-form">
+        <div class="form-group">
+          <label for="studentName">Student Name</label>
+          <input id="studentName" name="studentName"
+                 type="text" maxlength="80"
+                 placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" name="studentId"
+                 type="text" maxlength="30"
+                 placeholder="e.g. STU001" required>
+        </div>
+        <button type="submit" class="button primary-button">+ Add Student</button>
+      </form>
+      <p id="formMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Daily Attendance</h2>
+          <p>Mark each student present or absent.</p>
+        </div>
+        <button id="exportButton" class="button secondary-button" type="button">
+          Export CSV
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-label" for="searchInput">Search students</label>
+        <input id="searchInput" type="search"
+               placeholder="Search by name or student ID">
+      </div>
+
+      <div id="studentList" class="student-list">
+        <p class="empty-state">No students added yet. Add your first student above.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Attendance History</h2>
+          <p>Review previously recorded attendance.</p>
+        </div>
+      </div>
+
+      <div class="history-controls">
+        <label for="historyDate">Filter by date</label>
+        <input id="historyDate" type="date">
+        <button id="clearFilterButton" class="button secondary-button" type="button">
+          Show All
+        </button>
+      </div>
+      <div id="historyList">
+        <p class="empty-state">No attendance records yet.</p>
+      </div>
+    </section>
+
+    <p class="privacy-note">
+      Note: This demonstration stores data in this browser on this device.
+      Export your CSV regularly to keep a backup.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>Student Attendance Tracker | HTML, CSS and JavaScript</p>
+  </footer>
+</body>
+          </html>
+  
